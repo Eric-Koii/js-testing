@@ -1,16 +1,21 @@
 console.log("testran")
 //const mod = require("./module.js")
-const webserver = require("./webserver")
+
 const axios = require("axios")
 
 
 async function runTests() {
  
     try {
-        await webserver.server.listen(3000)
+       
        // var result = await mod.getTasks()
        // console.log (result)
-      
+       var eric = {
+           hair: 'brown'
+        
+       }
+       var result = await axios.post('http://localhost:3000/people', eric , {headers: {'content-type': 'application/json'}}) 
+       console.log(result.data)
     }catch (error) {
         console.error(error);
     }
